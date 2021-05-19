@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/n3rdy/dev/c/zero/eaux/mosaic/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+.PHONY	Makefile	/^.PHONY = clean all$/;"	m
+CC	Makefile	/^CC=clang$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-Wall$/;"	m
+MOSAIC_MATRIX_H	src/mosaic.h	/^#define MOSAIC_MATRIX_H$/;"	d
+all	Makefile	/^all: libmosaic.a test$/;"	t
+clean	Makefile	/^clean:$/;"	t
+cols	src/mosaic.h	/^	unsigned int cols;$/;"	m	struct:mosaic_matrix	typeref:typename:unsigned int
+libmosaic.a	Makefile	/^libmosaic.a: mosaic.o$/;"	t
+main	src/test.c	/^int main() {$/;"	f	typeref:typename:int
+mosaic.o	Makefile	/^mosaic.o: src\/mosaic.c src\/mosaic.h$/;"	t
+mosaic_free	src/mosaic.c	/^int mosaic_free(struct mosaic_matrix *matrix) {$/;"	f	typeref:typename:int
+mosaic_matrix	src/mosaic.h	/^struct mosaic_matrix {$/;"	s
+mosaic_matrix_add	src/mosaic.c	/^int mosaic_matrix_add(struct mosaic_matrix *m1, $/;"	f	typeref:typename:int
+mosaic_matrix_apply	src/mosaic.c	/^int mosaic_matrix_apply(struct mosaic_matrix *matrix, float (*func)(float)) {$/;"	f	typeref:typename:int
+mosaic_matrix_assign	src/mosaic.c	/^int mosaic_matrix_assign(struct mosaic_matrix *matrix, float *values) {$/;"	f	typeref:typename:int
+mosaic_matrix_init	src/mosaic.c	/^int mosaic_matrix_init(struct mosaic_matrix *matrix, unsigned int rows, unsigned int cols) {$/;"	f	typeref:typename:int
+mosaic_matrix_multiply	src/mosaic.c	/^int mosaic_matrix_multiply(struct mosaic_matrix *m1, $/;"	f	typeref:typename:int
+mosaic_print	src/mosaic.c	/^int mosaic_print(struct mosaic_matrix *matrix) {$/;"	f	typeref:typename:int
+raw	src/mosaic.h	/^	float *raw;$/;"	m	struct:mosaic_matrix	typeref:typename:float *
+rows	src/mosaic.h	/^	unsigned int rows;$/;"	m	struct:mosaic_matrix	typeref:typename:unsigned int
+test	Makefile	/^test: libmosaic.a src\/test.c$/;"	t
