@@ -18,4 +18,5 @@ int mosaic_matrix_multiply(struct mosaic_matrix *m1,
 int mosaic_matrix_assign(struct mosaic_matrix *matrix, float *values);
 int mosaic_free(struct mosaic_matrix *matrix);
 int mosaic_print(struct mosaic_matrix *matrix);
+int mosaic_cpy(struct mosaic_matrix *from, struct mosaic_matrix *to);
 #endif

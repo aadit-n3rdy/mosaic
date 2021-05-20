@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 int mosaic_matrix_init(struct mosaic_matrix *matrix, unsigned int rows, unsigned int cols) {
 	matrix->raw = calloc(rows*cols, sizeof(float));
@@ -83,6 +84,12 @@ int mosaic_print(struct mosaic_matrix *matrix) {
 		}
 		printf("]\n");
 	}
+	return 0;
+}
+
+int mosaic_cpy(struct mosaic_matrix *from, struct mosaic_matrix *to) {
+	mosaic_matrix_init(to, from->rows, from->cols);
+	memcpy(from->raw, to->raw, from->rows * from->cols * sizeof(float));
 	return 0;
 }
 
