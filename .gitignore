@@ -1,5 +1,2 @@
 .clang/*
 compile_commands.json
-**.o
-**.a
-test

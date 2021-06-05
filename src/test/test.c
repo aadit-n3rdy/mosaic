@@ -1,4 +1,4 @@
-#include "mosaic.h"
+#include <mosaic.h>
 #include <stdio.h>
 
 int main() {
