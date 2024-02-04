@@ -5,11 +5,11 @@ SRCDIR:=src
 SRC:=$(wildcard $(SRCDIR)/*.c)
 
 DEBUG_DIR:=debug
-DEBUG_CFLAGS:=-Wall -g -O0 -fsanitize=address -s
+DEBUG_CFLAGS:=-Wall -g -O0 -fsanitize=address -s -I./include
 DEBUG_OBJ:=$(SRC:$(SRCDIR)/%.c=$(DEBUG_DIR)/obj/%.o)
 
 RELEASE_DIR:=release
-RELEASE_CFLAGS:=-Wall -s
+RELEASE_CFLAGS:=-Wall -s -I./include
 RELEASE_OBJ:=$(SRC:$(SRCDIR)/%.c=$(RELEASE_DIR)/obj/%.o)
 
 all: debug release 

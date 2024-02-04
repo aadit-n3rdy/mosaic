@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/n3rdy/dev/c/mosaic/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+$(DEBUG_DIR)/obj/%.o	Makefile	/^$(DEBUG_OBJ): $(DEBUG_DIR)\/obj\/%.o : $(SRCDIR)\/%.c$/;"	t
+$(DEBUG_OBJ)	Makefile	/^$(DEBUG_OBJ): $(DEBUG_DIR)\/obj\/%.o : $(SRCDIR)\/%.c$/;"	t
+$(RELEASE_DIR)/obj/%.o	Makefile	/^$(RELEASE_OBJ): $(RELEASE_DIR)\/obj\/%.o : $(SRCDIR)\/%.c$/;"	t
+$(RELEASE_OBJ)	Makefile	/^$(RELEASE_OBJ): $(RELEASE_DIR)\/obj\/%.o : $(SRCDIR)\/%.c$/;"	t
+.PHONY	Makefile	/^.PHONY = clean all debug release$/;"	m
+CC	Makefile	/^CC=gcc$/;"	m
+DEBUG_CFLAGS	Makefile	/^DEBUG_CFLAGS:=-Wall -g -O0 -fsanitize=address -s -I.\/include$/;"	m
+DEBUG_DIR	Makefile	/^DEBUG_DIR:=debug$/;"	m
+DEBUG_OBJ	Makefile	/^DEBUG_OBJ:=$(SRC:$(SRCDIR)\/%.c=$(DEBUG_DIR)\/obj\/%.o)$/;"	m
+MOSAIC_MATRIX_H	include/mosaic.h	/^#define MOSAIC_MATRIX_H$/;"	d
+RELEASE_CFLAGS	Makefile	/^RELEASE_CFLAGS:=-Wall -s -I.\/include$/;"	m
+RELEASE_DIR	Makefile	/^RELEASE_DIR:=release$/;"	m
+RELEASE_OBJ	Makefile	/^RELEASE_OBJ:=$(SRC:$(SRCDIR)\/%.c=$(RELEASE_DIR)\/obj\/%.o)$/;"	m
+SRC	Makefile	/^SRC:=$(wildcard $(SRCDIR)\/*.c)$/;"	m
+SRCDIR	Makefile	/^SRCDIR:=src$/;"	m
+all	Makefile	/^all: debug release $/;"	t
+clean	Makefile	/^clean:$/;"	t
+cols	include/mosaic.h	/^	unsigned int cols;$/;"	m	struct:mosaic_matrix	typeref:typename:unsigned int
+debug	Makefile	/^debug: $(DEBUG_OBJ)$/;"	t
+main	src/test/test.c	/^int main() {$/;"	f	typeref:typename:int
+mosaic_copy	src/mosaic.c	/^int mosaic_copy(struct mosaic_matrix *from, struct mosaic_matrix *to) {$/;"	f	typeref:typename:int
+mosaic_determinant	src/mosaic.c	/^float mosaic_determinant(struct mosaic_matrix *mat) {$/;"	f	typeref:typename:float
+mosaic_elem_row_sum	src/mosaic.c	/^int mosaic_elem_row_sum(struct mosaic_matrix *mat, unsigned int result,$/;"	f	typeref:typename:int
+mosaic_elem_row_swap	src/mosaic.c	/^int mosaic_elem_row_swap(struct mosaic_matrix *mat, unsigned int r1, unsigned int r2) {$/;"	f	typeref:typename:int
+mosaic_lower_tri	src/mosaic.c	/^int mosaic_lower_tri(struct mosaic_matrix *mat) {$/;"	f	typeref:typename:int
+mosaic_matrix	include/mosaic.h	/^struct mosaic_matrix {$/;"	s
+mosaic_matrix_add	src/mosaic.c	/^int mosaic_matrix_add(struct mosaic_matrix *m1, $/;"	f	typeref:typename:int
+mosaic_matrix_apply	src/mosaic.c	/^int mosaic_matrix_apply(struct mosaic_matrix *matrix, float (*func)(float)) {$/;"	f	typeref:typename:int
+mosaic_matrix_get	src/mosaic.c	/^static inline float mosaic_matrix_get(struct mosaic_matrix *mat, unsigned int r, unsigned int c)/;"	f	typeref:typename:float	file:
+mosaic_matrix_init	src/mosaic.c	/^int mosaic_matrix_init(struct mosaic_matrix *matrix, float *values,$/;"	f	typeref:typename:int
+mosaic_matrix_multiply	src/mosaic.c	/^int mosaic_matrix_multiply(struct mosaic_matrix *m1, $/;"	f	typeref:typename:int
+mosaic_matrix_t	include/mosaic.h	/^typedef struct mosaic_matrix* mosaic_matrix_t;$/;"	t	typeref:struct:mosaic_matrix *
+mosaic_print	src/mosaic.c	/^int mosaic_print(struct mosaic_matrix *matrix) {$/;"	f	typeref:typename:int
+mosaic_upper_tri	src/mosaic.c	/^int mosaic_upper_tri(struct mosaic_matrix *mat) {$/;"	f	typeref:typename:int
+raw	include/mosaic.h	/^	float *raw;$/;"	m	struct:mosaic_matrix	typeref:typename:float *
+release	Makefile	/^release: $(RELEASE_OBJ)$/;"	t
+rows	include/mosaic.h	/^	unsigned int rows;$/;"	m	struct:mosaic_matrix	typeref:typename:unsigned int
+test	Makefile	/^test: debug src\/test\/test.c$/;"	t

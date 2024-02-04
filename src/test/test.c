@@ -1,17 +1,21 @@
 #include <mosaic.h>
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 	struct mosaic_matrix m1;
 	struct mosaic_matrix m2;
-	struct mosaic_matrix result;
-	mosaic_matrix_init(&m1, 2, 3);
-	mosaic_matrix_init(&m2, 3, 2);
-	mosaic_matrix_init(&result, 2, 2);
-	float data[] = {1, 2, 3, 4, 5, 6};
-	mosaic_matrix_assign(&m1, data);
-	mosaic_matrix_assign(&m2, data);
-	mosaic_matrix_multiply(&m1, &m2, &result);
-	printf("%f %f %f %f\n", result.raw[0], result.raw[1], result.raw[2], result.raw[3]);
-	return 0;
+	struct mosaic_matrix* mat = &m1;
+	float data[] = {2, 3, 2, 1, 4, 7, 5, 8, 6};
+	float data2[9];
+	m2.raw = data2;
+	m2.rows = 3;
+	m2.cols = 3;
+	memcpy(m2.raw, data, 9 * sizeof(float));
+	mosaic_upper_tri(&m2);
+	mosaic_matrix_init(mat, data, 3, 3);
+	mosaic_print(mat);
+	printf("\n");
+	mosaic_print(&m2);
+	printf("%f\n", mosaic_determinant(mat));
 }
